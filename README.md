@@ -5,12 +5,12 @@ Script to re-roll pods. Useful when unreachable.
 kubectl, kubectx, and kubens.
 
 ### Usage
-Use -ctx as  optional parameter for cluster. 
-If -ctx is not used, your current cluster will be used instead.
+Use cluster name as optional argument. 
+If argument is not passed, your current cluster will be used instead.
 
 ### Running
 ```
-./targetDown.sh -ctx uw2p-akp-b1
+./targetDown.sh uw2p-akp-b1
 ```
 
 ### Output
