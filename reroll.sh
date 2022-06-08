@@ -1,28 +1,11 @@
 #!/bin/bash
 
 # This script requires kubectl, kubectx, and kubens.
-# Use -n as  optional parameter for namespace. 
-# If -n is not used, your current namespace will be used instead.
+# Use cluster name as optional argument. 
+# If argument is not passed, your current cluster will be used instead.
 
+kubectx $1
 
-while getopts ":cluster:" opt; do
-  case $opt in
-    cluster)
-      kubectx $OPTARG
-      echo "Using cluster: $OPTARG" >&2
-      ;;
-    \?)
-      echo "Invalid option: -$OPTARG" >&2
-      exit 1
-      ;;
-    :)
-      echo "Option -$OPTARG requires an argument." >&2
-      exit 1
-      ;;
-  esac
-done
-
-echo "Using namespace:"
 kubens monitoring
 
 echo "Getting prometheus-operator pods..."
