@@ -7,10 +7,12 @@ kubectl, kubectx, and kubens.
 ### Usage
 Use cluster name as optional argument. 
 If argument is not passed, your current cluster will be used instead.
+Use namespace as second optional argument. 
+If second argument is not passed, the monitoring namespace will be used instead.
 
 ### Running
 ```
-./targetDown.sh uw2p-akp-b1
+./targetDown.sh [CLUSTER] [NAMESPACE]
 ```
 
 ### Output
