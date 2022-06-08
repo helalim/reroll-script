@@ -16,7 +16,17 @@ If argument is not passed, your current cluster will be used instead.
 ### Output
 
 ```
+/ [main] sh reroll.sh uw2p-akp-b1    
+Switched to context "uw2p-akp-b1".
+Context "uw2p-akp-b1" modified.
+Active namespace is "monitoring".
+Getting prometheus-operator pods...
+prometheus-operator-588c5bfcd4-78lhj     2/2     Running   0          38m
+Getting prometheus-operator logs...
 ts=2022-06-08T21:23:10.575617533Z caller=stdlib.go:89 ts="2022/06/08 21:23:10" caller="http: TLS handshake error from 127.0.0.1:39078" msg="remote error: tls: bad certificate"
+.
+.
+.
 ts=2022-06-08T21:23:35.604604203Z caller=stdlib.go:89 ts="2022/06/08 21:23:35" caller="http: TLS handshake error from 127.0.0.1:39460" msg="remote error: tls: bad certificate"
 ts=2022-06-08T21:23:40.580725163Z caller=stdlib.go:89 ts="2022/06/08 21:23:40" caller="http: TLS handshake error from 127.0.0.1:39608" msg="remote error: tls: bad certificate"
 Are you sure you want to rollout prometheus-operator-6948ccf56d-hsp2q? (y/n)y
