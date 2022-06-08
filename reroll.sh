@@ -4,7 +4,11 @@
 # Use cluster name as optional argument. 
 # If argument is not passed, your current cluster will be used instead.
 
-kubectx $1
+if [ ! -z "$1" ]
+  then
+    kubectx $1
+fi
+
 
 kubens monitoring
 
@@ -14,6 +18,10 @@ kubectl get pods | grep prometheus-operator
 pod=$(kubectl get pods | awk '{print $1}' | grep -e "prometheus-operator")
 echo "Getting prometheus-operator logs..."
 kubectl logs $pod -c prometheus-operator
+
+error=$(kubectl logs $pod -c prometheus-operator) | grep "TLS handshake error"
+
+echo $error
 
 read -p "Are you sure you want to rollout $pod? (y/n)" -n 1 -r
 echo
