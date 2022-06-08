@@ -33,14 +33,10 @@ pod=$(kubectl get pods | awk '{print $1}' | grep -e "prometheus-operator")
 echo "Getting prometheus-operator logs..."
 kubectl logs $pod -c prometheus-operator
 
-error=$(kubectl logs $pod -c prometheus-operator) | grep "TLS handshake error"
-
-echo $error
-
-read -p "Are you sure you want to rollout $pod? (y/n)" -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
+logs=$(kubectl logs $pod -c prometheus-operator 2>&1)
+if [[ $logs == *"TLS handshake error"* ]]; then
+  echo "Detected a common TLS handshake error. Re-rolling the pods will fix this. Auto-reroll will start in 10 seconds. use CTRL+C to cancel..."
+  sleep 10
   echo "Restarting the pods using rolling restart method..."
   kubectl rollout restart deployment prometheus-operator
 
