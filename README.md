@@ -1,5 +1,5 @@
 # reroll-script
-Script to re-roll pods. Useful when unreachable.
+Script to re-roll pods if the logs contain TLS handshake error.
 
 ### Requirements
 kubectl, kubectx, and kubens.
