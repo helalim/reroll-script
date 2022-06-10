@@ -12,7 +12,11 @@ If second argument is not passed, the monitoring namespace will be used instead.
 
 ### Running
 ```
-./targetDown.sh [CLUSTER] [NAMESPACE]
+./reroll.sh [CLUSTER] [NAMESPACE]
+```
+or for bulk check
+```
+./reroll-all.sh
 ```
 
 ### Output
