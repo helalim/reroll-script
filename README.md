@@ -1,4 +1,4 @@
-# reroll-script
+# pod-restart-script
 Script to re-roll pods if the logs contain TLS handshake error.
 
 ### Requirements
@@ -12,17 +12,17 @@ If second argument is not passed, the monitoring namespace will be used instead.
 
 ### Running
 ```
-./reroll.sh [CLUSTER] [NAMESPACE]
+./pod-restart.sh [CLUSTER] [NAMESPACE]
 ```
 or for bulk check
 ```
-./reroll-all.sh
+./pod-restart-all.sh
 ```
 
 ### Output
 
 ```
-/ [main] sh reroll.sh uw2p-akp-b1    
+/ [main] sh pod-restart.sh uw2p-akp-b1    
 Switched to context "uw2p-akp-b1".
 Context "uw2p-akp-b1" modified.
 Active namespace is "monitoring".
