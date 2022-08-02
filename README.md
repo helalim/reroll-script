@@ -61,3 +61,4 @@ level=info ts=2022-06-08T21:24:19.930124263Z caller=operator.go:1163 component=p
 level=info ts=2022-06-08T21:24:20.123687026Z caller=operator.go:285 component=alertmanageroperator msg="successfully synced all caches"
 level=info ts=2022-06-08T21:24:20.756030594Z caller=operator.go:1163 component=prometheusoperator msg="sync prometheus" key=monitoring/k8s
 ```
+
